@@ -1,0 +1,41 @@
+:root {
+  // fonts
+  --headerFont: 'Cantata One', serif;
+  --bodyFont:   'Helvetica Neue', 'Roboto', sans-serif;
+  --baseFontSize: 16px;
+
+  // colors
+  --black:     #2C2B27;
+  --gold:      #998439;
+  --gold-2:    #B29F58;
+  --green:     #7ED321;
+
+
+  font-size: var(--baseFontSize);
+}
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: var(--bodyFont);
+  color: var(--black);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--headerFont);
+}
+
+h1 {
+  font-size: 3.375rem;
+}

@@ -1,0 +1,108 @@
+//*******************************//
+// TEXT UTILITIES
+//*******************************//
+.t-sm {
+  font-size: 75%;
+}
+.t-md {
+  font-size: 110%;
+}
+.t-muted {
+  opacity: 0.7;
+}
+.t-bold {
+  font-weight: 700;
+}
+.t-xbold {
+  font-weight: 900;
+}
+.td-none {
+  text-decoration: none;
+}
+
+.ta-center {
+  text-align: center;
+}
+
+
+//*******************************//
+// COLORS
+//*******************************//
+.c-gold {
+  color: var(--gold);
+}
+
+
+//*******************************//
+// MARGINS
+//*******************************//
+.m0 {
+  margin: 0;
+}
+.m1 {
+  margin: 0.25rem;
+}
+.m2 {
+  margin: 0.5rem;
+}
+.m3 {
+  margin: 0.75rem;
+}
+.m4 {
+  margin: 1rem;
+}
+.mt0 {
+  margin-top: 0;
+}
+.mt1 {
+  margin-top: 0.25rem;
+}
+.mt2 {
+  margin-top: 0.5rem;
+}
+.mt3 {
+  margin-top: 0.75rem;
+}
+.mt4 {
+  margin-top: 1rem;
+}
+
+.my0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.my1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.my2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.my3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.my4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+//*******************************//
+// DISPLAY
+//*******************************//
+.d-flex {
+  display: flex;
+}
+
+
+//*******************************//
+// FLEX
+//*******************************//
+.f-a-center {
+  align-items: center;
+}
+.f-j-center {
+  justify-content: center;
+}
