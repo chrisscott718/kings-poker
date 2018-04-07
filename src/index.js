@@ -18,11 +18,11 @@ ReactDOM.render(
   <Router>
       <div>
         <Navigation />
-          <Switch>
-            <Route exact path="/" component={App} />
-            <Route exact path="/buildyourown" component={BuildYourOwn} />
-          </Switch>
-        </div>
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route exact path="/buildyourown" component={BuildYourOwn} />
+        </Switch>
+      </div>
   </Router>,
   document.getElementById('root'));
 registerServiceWorker();

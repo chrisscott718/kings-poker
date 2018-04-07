@@ -6,10 +6,10 @@
 
   // colors
   --black:     #2C2B27;
-  --gold:      #998439;
-  --gold-2:    #B29F58;
+  --gold:      #B29F58;
   --green:     #7ED321;
-
+  --gray1:     #E5E4E3;
+  --gray2:     #C2C1C1;
 
   font-size: var(--baseFontSize);
 }
@@ -34,8 +34,11 @@ body, html {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--headerFont);
+  margin: 0;
 }
-
 h1 {
   font-size: 3.375rem;
+}
+p {
+  margin: 0;
 }

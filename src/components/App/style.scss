@@ -1,10 +1,23 @@
 .wrapper {
   min-height: 100vh;
   position: relative;
+  background: linear-gradient(rgba(248,248,248,1) 0%, rgba(255,255,255,1) 100%);
+}
+.header-content {
+  position: relative;
+  z-index: 100;
 }
 .header-img {
   position: absolute;
   max-width: 400px;
   bottom: 0;
   right: 0;
+  z-index: 0;
+}
+.seperator {
+  display: block;
+  width: 1px;
+  height: 100px;
+  background: var(--gold);
+  margin: 1rem auto;
 }

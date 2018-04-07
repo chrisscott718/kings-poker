@@ -12,16 +12,16 @@ export default class App extends Component {
     return (
       <main className="wrapper d-flex f-a-center f-j-center ta-center">
         <div className="header-content">
-          <h1>Redefine your Poker Experience</h1>
+          <h1 className="mb4 mt0">Redefine your Poker Experience</h1>
           <p className="lead">Custom Luxury Poker Tables Built to Perfection</p>
           <span className="seperator"></span>
-          <Button>
+          <Button className="mb4">
             <NavLink to="/buildyourown">
               Build Your Own
             </NavLink>
           </Button>
           <div className="call-us">
-            <p className="t-sm t-muted">or talk to a real person</p>
+            <p className="t-sm t-muted mb1">or talk to a real person</p>
             <a className="c-gold t-bold td-none t-md" href="tel:1-800-897-1189">800-897-1189</a>
           </div>
         </div>

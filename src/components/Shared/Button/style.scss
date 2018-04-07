@@ -1,0 +1,21 @@
+.btn {
+  color: var(--black);
+  border: solid 1px var(--black);
+  background: transparent;
+  font-size: var(--baseFontSize);
+  line-height: 24px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1px;
+  text-transform: uppercase;
+  transition: all 150ms ease;
+  font-weight: 500;
+  cursor: pointer;
+  &:hover {
+    background: var(--black);
+    color: white;
+  }
+  & > a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
