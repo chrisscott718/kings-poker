@@ -8,6 +8,7 @@
   --black:     #2C2B27;
   --gold:      #B29F58;
   --green:     #7ED321;
+  --gray0:     #f8f8f8;
   --gray1:     #E5E4E3;
   --gray2:     #C2C1C1;
 
@@ -36,9 +37,26 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--headerFont);
   margin: 0;
 }
-h1 {
-  font-size: 3.375rem;
-}
 p {
   margin: 0;
+}
+.page-wrapper { padding-top: 8rem; }
+
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+  h1 {font-size: 3.375rem;}
+  h2 {font-size: 2.5rem;}
+  h3 {font-size: 1.35rem;}
+  .page-wrapper { padding-top: 10rem; }
+}
+
+@media (min-width: 1200px) {
+
 }

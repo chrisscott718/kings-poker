@@ -1,0 +1,43 @@
+.byo-wrapper {
+  margin-top: 83px;
+}
+
+.byo-container {
+  padding: 2.5rem 0;
+}
+
+.byo-steps {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+  .step {
+    color: var(--black);
+    opacity: 0.7;
+    transition: all 300ms ease;
+    position: relative;
+    user-select: none;
+    padding: 1rem 1.5rem;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 25%;
+      height: 2px;
+      left: 50%;
+      transform: translate(-50%, -10px) scaleY(0);
+      margin-top: 0.5rem;
+      opacity: 0;
+      background: var(--gold);
+      transition: all 300ms ease;
+    }
+    &.active {
+      opacity: 1;
+      &:after {
+        transform: translate(-50%, 0px) scaleY(1);
+        opacity: 1;
+      }
+    }
+  }
+}
