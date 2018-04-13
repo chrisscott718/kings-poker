@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import './style.scss';
 
-import BuildFormWrapper from './BuildFormWrapper';
+import {BuildFormWrapper} from './BuildFormWrapper';
+import {Footer} from 'Shared/Footer';
 
 export default class BuildYourOwn extends Component {
   constructor(props) {
@@ -48,26 +49,29 @@ export default class BuildYourOwn extends Component {
   }
 
   render() {
-    const {step: step} = this.state;
+    const {step} = this.state;
 
     return (
-      <div className="byo-wrapper">
-        <div className="container">
-          <div className="row">
-            <div className="col"></div>
-            <div className="col-md-8">
-              <div className="byo-container">
-                <Steps step={step} />
-                <BuildFormWrapper
-                  next={this.nextStep}
-                  prev={this.prevStep}
-                  step={step}
-                />
+      <div>
+        <div className="byo-wrapper">
+          <div className="container">
+            <div className="row">
+              <div className="col"></div>
+              <div className="col-md-10">
+                <div className="byo-container">
+                  <Steps step={step} />
+                  <BuildFormWrapper
+                    next={this.nextStep}
+                    prev={this.prevStep}
+                    step={step}
+                  />
+                </div>
               </div>
+              <div className="col"></div>
             </div>
-            <div className="col"></div>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

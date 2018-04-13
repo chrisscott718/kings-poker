@@ -58,6 +58,17 @@
   @extend .t-light;
 }
 
+.simple-link {
+  font-size: 0.75rem;
+  cursor: pointer;
+  color: var(--gold);
+  text-transform: uppercase;
+  font-weight: 600;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 
 //*******************************//
 // COLORS
@@ -147,6 +158,9 @@
 //*******************************//
 .d-flex {
   display: flex;
+}
+.d-block {
+  display: block;
 }
 
 .p-relative {

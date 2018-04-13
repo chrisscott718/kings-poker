@@ -1,38 +1,85 @@
 import React, {Component} from 'react';
+import { withRouter } from 'react-router-dom';
 
-export default class BuildFormWrapper extends Component {
+import {
+  WoodOptions,
+  TableDetails,
+  QuoteSubmissionForm,
+} from './FormElements';
+
+import TableShape from './TableShape';
+import Pedestal from './Pedestal';
+import Chiprack from './Chiprack';
+
+class _BuildFormWrapper extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       tableShape: '',
-      totalCups: '',
+      pedestalStyle: '',
+      chipRack: '',
+      cupHolders: '',
+      woodType: '',
+      woodStain: '',
+      fabricColor: '',
+      metalAccent: '',
+      armRest: '',
+      includeDiningTop: false,
     }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = event.target.name;
+
+    this.setState(() => ({
+      [name]: value,
+    }));
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.history.push('/byosuccess');
   }
 
   render() {
-    const {
-      step,
-      next,
-      prev
-    } = this.props;
+    const { step } = this.props;
+
+    let activeForm = null;
+
+    switch (step) {
+      case 1:
+        activeForm = <TableShape {...this.props} value={this.state.tableShape} handleChange={this.handleChange} />
+        break;
+      case 2:
+        activeForm = <Pedestal {...this.props} value={this.state.pedestalStyle} handleChange={this.handleChange} />
+        break;
+      case 3:
+        activeForm = <Chiprack chipRack={this.state.chipRack} cupHolders={this.state.cupHolders} {...this.props} handleChange={this.handleChange} />
+        break;
+      case 4:
+        activeForm = <WoodOptions woodType={this.state.woodType} woodStain={this.state.woodStain} {...this.props} handleChange={this.handleChange}/>
+        break;
+      case 5:
+        activeForm = <TableDetails {...this.props} state={this.state} handleChange={this.handleChange} />
+        break;
+      case 6:
+        activeForm = <QuoteSubmissionForm {...this.props} />
+        break;
+      default:
+        activeForm = <TableShape {...this.props} handleChange={this.handleChange} />
+    }
+
     return (
-      <form onSubmit={(e) => {e.preventDefault(); console.log('formSubmitted')}}>
-        <div>
-          <SectionHeader
-            title="Start Building Your Table"
-            subtitle="Choose your options and we'll send you a quote" />
-          <div className="byo-body">
-            options here
-          </div>
-        </div>
+      <form onSubmit={this.handleSubmit}>
+        {activeForm}
       </form>
     );
   }
 }
 
-const SectionHeader = ({title, subtitle}) => (
-  <div className="byo-header ta-center">
-    <h2 className="mb4">{title}</h2>
-    <p className="t-muted t-md t-light">{subtitle}</p>
-  </div>
-);
+export const BuildFormWrapper = withRouter(_BuildFormWrapper);
