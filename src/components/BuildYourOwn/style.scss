@@ -10,17 +10,17 @@
 .byo-steps {
   display: flex;
   justify-content: center;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
   .step {
     color: var(--black);
     opacity: 0.2;
     transition: all 300ms ease;
     position: relative;
     user-select: none;
-    padding: 1rem 1.5rem;
     text-transform: uppercase;
-    font-size: 0.875rem;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.65rem;
     &:after {
       content: '';
       display: block;
@@ -116,14 +116,12 @@ $check-width: 7px;
 $check-thickness: 2px;
 .checkmark {
   display: none;
-
   &.draw:after {
     animation-duration: 800ms;
     animation-timing-function: ease;
     animation-name: checkmark;
     transform: scaleX(-1) rotate(135deg);
   }
-
   &:after {
     opacity: 1;
     height: $check-height;
@@ -161,7 +159,7 @@ $check-thickness: 2px;
 }
 
 .form-slim {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
 }
 .form-row-h {
@@ -171,16 +169,16 @@ $check-thickness: 2px;
   align-items: flex-start;
   flex-direction: column;
   .form-row-title {
-    font-size: 0.75rem;
-    font-weight: 500;
-    opacity: 0.6;
-    letter-spacing: 1px;
-    text-transform: uppercase;
     flex: 0 0 100%;
     margin-bottom: 1rem;
+    display: block;
+    width: 100%;
+    text-align: center;
   }
   .form-row-content {
     padding-left: 0rem;
+    flex: 1 1 100%;
+    width: 100%;
   }
   &:last-child {
     border-bottom: none;
@@ -194,9 +192,12 @@ $check-thickness: 2px;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  margin-bottom: 2rem;
   cursor: pointer;
+  padding: 1rem;
+  transition: all 150ms ease;
+  border-radius: 6px;
   .sm-img-wrapper {
+    background: white;
     margin-right: 1rem;
     flex: 0 0 70px;
     height: 70px;
@@ -209,26 +210,34 @@ $check-thickness: 2px;
     }
   }
   &:hover {
+    background: var(--gray0);
     .sm-img-wrapper {
       box-shadow: 0px 0px 0px 3px rgba(179, 159, 88,0.2);
     }
   }
 }
 input[type="radio"]:checked + .sm-img-checkbox {
+  background: white;
   .sm-img-wrapper {
-    box-shadow: 0px 0px 0px 1px rgba(179, 159, 88,0.2);
+    box-shadow: 0px 0px 0px 1px rgba(179, 159, 88, 0.5);
     border-color: var(--gold);
   }
+}
+
+.quote-form {
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 // WOOD STYLES
 .wood-style-wrapper {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .wood-type-check {
-  flex: 0 0 15%;
-  margin: 2rem;
+  flex: 0 0 50%;
+  padding: 2rem;
   text-align: center;
   cursor: pointer;
   p {
@@ -237,7 +246,7 @@ input[type="radio"]:checked + .sm-img-checkbox {
   }
   .wood-img {
     margin-bottom: 1rem;
-    border-radius: 999em;
+    border-radius: 3px;
     border: solid 1px transparent;
     box-shadow: 0px 0px 0px 0px rgba(179, 159, 88,0.2);
     transition: all 150ms ease;
@@ -246,23 +255,159 @@ input[type="radio"]:checked + .sm-img-checkbox {
     justify-content: center;
     img {
       max-width: 100%;
-      border-radius: 999em;
-    }
-    &:hover {
-      box-shadow: 0px 0px 0px 3px rgba(179, 159, 88,0.2);
+      border-radius: 3px;
     }
   }
 }
 input[type="radio"]:checked + .wood-type-check {
   .wood-img {
-    box-shadow: 0px 0px 0px 3px rgba(179, 159, 88,0.3);
-    border-color: var(--gold);
+    box-shadow: 0px 0px 0px 5px rgba(179, 159, 88, 0.5);
+    border: solid 3px white;
   }
 }
 
+.stain-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.color-option {
+  padding: 0 1rem;
+  flex: 0 0 100px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.color-option-label {
+  border-radius: 50%;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  display: block;
+  border: solid 1px var(--gray0);
+  margin: 0 auto;
+  padding: 0.825rem;
+  transition: all 150ms ease;
+  border: solid 2px white;
+  cursor: pointer;
+}
+input[type="radio"]:checked + .color-option-label {
+  box-shadow: 0px 0px 0px 3px rgba(179, 159, 88, 0.5);
+}
+
+.color-option-text {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  transition: all 150ms ease;
+  display: inline-block;
+  padding: 0.5rem 0;
+  white-space: nowrap;
+}
+.bg-brown {
+  background-color: rgb(89, 59, 21);
+}
+.bg-black {
+  background-color: var(--black);
+}
+.bg-cherry {
+  background-color: rgb(158, 131, 94);
+}
+.bg-burgundy {
+  background-color: rgb(133, 12, 48);
+}
+.bg-blue {
+  background-color: rgb(25, 94, 166);
+}
+.bg-green {
+  background-color: rgb(32, 143, 50);
+}
+.bg-clear {
+  background-color: var(--gray0);
+  border: solid 1px var(--gray1);
+}
+.bg-brass {
+  background: linear-gradient(#f3e2c7 0%, #c19e67 50%, #b68d4c 51%, #e9d4b3 100%);
+}
+.bg-steel {
+  background: linear-gradient(#e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+}
+.fabric-picker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.15rem;
+  cursor: pointer;
+  .checkbox-indicator {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    background: var(--gray1);
+    flex: 0 0 20px;
+    margin: 0.35rem 0.75rem 0 0;
+    position: relative;
+    transition: all 150ms ease;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 6px;
+      height: 12px;
+      left: 7px;
+      top: 3px;
+      border-right: 2px solid white;
+      border-bottom: 2px solid white;
+      transform: rotate(45deg);
+      opacity: 0;
+      transition: all 150ms ease;
+    }
+  }
+  &:hover {
+    .checkbox-indicator {
+      background: var(--gray2);
+      &:after {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+input[type="checkbox"] {
+  width: 0;
+  height: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+input[type="checkbox"]:checked + .checkbox {
+  .checkbox-indicator {
+    background: var(--black);
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+.dining-top {
+  padding: 0.8rem 1.6rem;
+}
 // Media Queries
 
 @media (min-width: 768px) {
+  .byo-steps {
+    margin-bottom: 1.75rem;
+    .step {
+      padding: 1rem 1.5rem;
+      font-size: 0.875rem;
+      letter-spacing: 2px;
+    }
+  }
   .tile {
     border-bottom: none;
     padding-bottom: 0;
@@ -296,6 +441,29 @@ input[type="radio"]:checked + .wood-type-check {
     .form-row-content {
       padding-left: 2.5rem;
     }
+  }
+  .wood-style-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  .wood-type-check {
+    flex: 0 0 15%;
+    margin: 2rem;
+    padding: 0;
+    .wood-img {
+      &:hover {
+        box-shadow: 0px 0px 0px 3px rgba(179, 159, 88,0.2);
+      }
+    }
+  }
+  .color-option-label {
+    &:hover {
+      box-shadow: 0px 0px 0px 3px rgba(179, 159, 88, 0.2);
+    }
+  }
+  .fabric-picker {
+    justify-content: flex-start;
   }
 }
 

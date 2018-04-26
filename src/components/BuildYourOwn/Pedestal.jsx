@@ -17,7 +17,7 @@ export default class Pedestal extends Component {
 
   handleChange(e){
     this.props.handleChange(e);
-    setTimeout(this.props.next, 600);
+    setTimeout(this.props.next, 400);
   }
   render(){
     const { value, prev, next } = this.props;
@@ -100,9 +100,9 @@ export default class Pedestal extends Component {
         </fieldset>
         <div className="ta-center">
           {value &&
-            <Button className="mb4" onClick={next}>Next</Button>
+            <Button className="mb4" onClick={next}>Continue</Button>
           }
-          <span className="simple-link d-block" onClick={prev}>Prev Step</span>
+          <span className="simple-link d-block" onClick={prev}>Go Back</span>
         </div>
       </div>
     );

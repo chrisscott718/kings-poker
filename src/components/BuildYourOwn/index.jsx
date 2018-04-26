@@ -59,7 +59,9 @@ export default class BuildYourOwn extends Component {
               <div className="col"></div>
               <div className="col-md-10">
                 <div className="byo-container">
-                  <Steps step={step} />
+                  {step !== 6 &&
+                    <Steps step={step} />  
+                  }
                   <BuildFormWrapper
                     next={this.nextStep}
                     prev={this.prevStep}

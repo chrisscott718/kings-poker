@@ -22,7 +22,7 @@ export default class Chiprack extends Component {
           <div className="form-slim">
             <div className="form-row-h">
               <div className="form-row-title">
-                CHIPRACK STYLE
+                <h3>Chiprack</h3>
               </div>
               <div className="form-row-content">
                 <input
@@ -80,7 +80,7 @@ export default class Chiprack extends Component {
 
             <div className="form-row-h">
               <div className="form-row-title">
-                CUPHOLDERS
+                <h3 className="ta-right">Cupholders</h3>
               </div>
               <div className="form-row-content">
                 <input
@@ -137,8 +137,8 @@ export default class Chiprack extends Component {
           </div>
         </fieldset>
         <div className="ta-center">
-          <Button className="mb4" onClick={next}>Next</Button>
-          <span className="simple-link d-block" onClick={prev}>Prev Step</span>
+          <Button className="mb4" onClick={next}>Continue</Button>
+          <span className="simple-link d-block" onClick={prev}>Go Back</span>
         </div>
       </div>
     );

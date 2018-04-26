@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
 
 import {
-  WoodOptions,
   TableDetails,
   QuoteSubmissionForm,
 } from './FormElements';
@@ -10,6 +9,7 @@ import {
 import TableShape from './TableShape';
 import Pedestal from './Pedestal';
 import Chiprack from './Chiprack';
+import Wood from './Wood';
 
 class _BuildFormWrapper extends Component {
   constructor(props) {
@@ -26,6 +26,10 @@ class _BuildFormWrapper extends Component {
       metalAccent: '',
       armRest: '',
       includeDiningTop: false,
+      name: '',
+      email: '',
+      message: '',
+      phone: '',
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,7 +39,6 @@ class _BuildFormWrapper extends Component {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = event.target.name;
-
     this.setState(() => ({
       [name]: value,
     }));
@@ -62,13 +65,13 @@ class _BuildFormWrapper extends Component {
         activeForm = <Chiprack chipRack={this.state.chipRack} cupHolders={this.state.cupHolders} {...this.props} handleChange={this.handleChange} />
         break;
       case 4:
-        activeForm = <WoodOptions woodType={this.state.woodType} woodStain={this.state.woodStain} {...this.props} handleChange={this.handleChange}/>
+        activeForm = <Wood woodType={this.state.woodType} woodStain={this.state.woodStain} {...this.props} handleChange={this.handleChange}/>
         break;
       case 5:
         activeForm = <TableDetails {...this.props} state={this.state} handleChange={this.handleChange} />
         break;
       case 6:
-        activeForm = <QuoteSubmissionForm {...this.props} />
+        activeForm = <QuoteSubmissionForm state={this.state} {...this.props} handleChange={this.handleChange} />
         break;
       default:
         activeForm = <TableShape {...this.props} handleChange={this.handleChange} />

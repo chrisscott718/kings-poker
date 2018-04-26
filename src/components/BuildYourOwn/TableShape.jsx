@@ -17,7 +17,7 @@ export default class TableShape extends Component {
 
   handleChange(e){
     this.props.handleChange(e);
-    setTimeout(this.props.next, 600);
+    setTimeout(this.props.next, 400);
   }
 
   render(){
@@ -42,7 +42,7 @@ export default class TableShape extends Component {
                 <div className="label-content">
                   <img src={roundTable} alt="Round Table, Seats 6-8 Players"/>
                   <p className="label-title">Round</p>
-                  <p className="label-subtitle">Can seat 6-8 players</p>
+                  <p className="label-subtitle">Seats 6-8 players</p>
                 </div>
               </label>
             </div>
@@ -59,7 +59,7 @@ export default class TableShape extends Component {
                 <div className="label-content">
                   <img src={ovalTable} alt="Oval Table, Seats 10-12 Players"/>
                   <p className="label-title">Oval</p>
-                  <p className="label-subtitle">Can seat 10-12 players</p>
+                  <p className="label-subtitle">Seats 10-12 players</p>
                 </div>
               </label>
             </div>
@@ -76,7 +76,7 @@ export default class TableShape extends Component {
                 <div className="label-content">
                   <img src={octogonTable} alt="Octogon Table, Seats 6-8 Players"/>
                   <p className="label-title">Octogon</p>
-                  <p className="label-subtitle">Can seat 10-14 players</p>
+                  <p className="label-subtitle">Seats 10-14 players</p>
                 </div>
               </label>
             </div>
@@ -93,7 +93,7 @@ export default class TableShape extends Component {
                 <div className="label-content">
                   <img src={ellipsisTable} alt="Ellipsis Table, Seats 8-10 Players"/>
                   <p className="label-title">Ellipsis</p>
-                  <p className="label-subtitle">Can seat 10-14 players</p>
+                  <p className="label-subtitle">Seats 10-14 players</p>
                 </div>
               </label>
             </div>
@@ -101,7 +101,7 @@ export default class TableShape extends Component {
         </fieldset>
         <div className="ta-center">
           {value &&
-            <Button className="mb4" onClick={next}>Next</Button>
+            <Button className="mb4" onClick={next}>Continue</Button>
           }
         </div>
       </div>
