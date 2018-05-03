@@ -2568,7 +2568,7 @@ expand-tilde@^2.0.0, expand-tilde@^2.0.2:
   dependencies:
     homedir-polyfill "^1.0.1"
 
-express@^4.13.3:
+express@^4.13.3, express@^4.16.3:
   version "4.16.3"
   resolved "https://registry.yarnpkg.com/express/-/express-4.16.3.tgz#6af8a502350db3246ecc4becf6b5a34d22f7ed53"
   dependencies:
@@ -4853,6 +4853,10 @@ node-sass@^4.8.3:
     sass-graph "^2.2.4"
     stdout-stream "^1.4.0"
     "true-case-path" "^1.0.2"
+
+nodemailer@^4.6.4:
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-4.6.4.tgz#f0d72d0c6a6ec5f4369fa8f4bf5127a31baa2014"
 
 "nopt@2 || 3":
   version "3.0.6"
