@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-import {Button} from 'Shared/Button';
 import {SectionHeader} from './FormElements';
 
 import roundTable from 'Images/shape-round.svg';
@@ -17,11 +16,10 @@ export default class TableShape extends Component {
 
   handleChange(e){
     this.props.handleChange(e);
-    setTimeout(this.props.next, 400);
   }
 
   render(){
-    const { value, next } = this.props;
+    const { value } = this.props;
     return(
       <div>
         <SectionHeader
@@ -99,11 +97,6 @@ export default class TableShape extends Component {
             </div>
           </div>
         </fieldset>
-        <div className="ta-center">
-          {value &&
-            <Button className="mb4" onClick={next}>Continue</Button>
-          }
-        </div>
       </div>
     );
   }

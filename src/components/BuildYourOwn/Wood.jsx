@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-import {Button} from 'Shared/Button';
 import {SectionHeader} from './FormElements';
 
 import woodMahogany from 'Images/wood-mahogany.jpg';
@@ -19,7 +18,7 @@ export default class Wood extends Component {
   }
 
   render(){
-    const { prev, next, woodType, woodStain } = this.props;
+    const { woodType, woodStain } = this.props;
     return(
       <div>
         <SectionHeader
@@ -38,7 +37,12 @@ export default class Wood extends Component {
               <div className="wood-img">
                 <img src={woodMahogany} alt="Mahogany Wood" />
               </div>
-              <p className="t-bold">Mahogany</p>
+              <div className="wood-description">
+                <p>Mahogany</p>
+                {false &&
+                  <StainSelector woodStain={woodStain} handleChange={this.handleChange} />
+                }
+              </div>
             </label>
 
             <input
@@ -52,7 +56,12 @@ export default class Wood extends Component {
               <div className="wood-img">
                 <img src={woodCherry} alt="Cherry Wood" />
               </div>
-              <p className="t-bold">Cherry</p>
+              <div className="wood-description">
+                <p>Cherry</p>
+                {false &&
+                  <StainSelector woodStain={woodStain} handleChange={this.handleChange} />
+                }
+              </div>
             </label>
 
             <input
@@ -66,7 +75,12 @@ export default class Wood extends Component {
               <div className="wood-img">
                 <img src={woodWalnut} alt="Walnut Wood" />
               </div>
-              <p className="t-bold">Walnut</p>
+              <div className="wood-description">
+                <p>Walnut</p>
+                {false &&
+                  <StainSelector woodStain={woodStain} handleChange={this.handleChange} />
+                }
+              </div>
             </label>
 
             <input
@@ -80,76 +94,78 @@ export default class Wood extends Component {
               <div className="wood-img">
                 <img src={woodOak} alt="Oak Wood" />
               </div>
-              <p className="t-bold">Oak</p>
+              <div className="wood-description">
+                <p>Oak</p>
+                {false &&
+                  <StainSelector woodStain={woodStain} handleChange={this.handleChange} />
+                }
+              </div>
             </label>
           </div>
-          <div>
-            <h3 className="ta-center mb4">Stain Color</h3>
-            <div className="stain-options">
-              <div className="color-option">
-                <input
-                  type="radio"
-                  id="mahoganyStain"
-                  name="woodStain"
-                  value="Mahogany Stain"
-                  checked={woodStain === "Mahogany Stain"}
-                  onChange={this.handleChange} />
-                <label className="color-option-label bg-brown" htmlFor="mahoganyStain">
-                </label>
-                <span className="color-option-text">
-                  Mahogany
-                </span>
-              </div>
-              <div className="color-option">
-                <input
-                  type="radio"
-                  id="cherryStain"
-                  name="woodStain"
-                  value="Cherry Stain"
-                  checked={woodStain === "Cherry Stain"}
-                  onChange={this.handleChange} />
-                <label className="color-option-label bg-cherry" htmlFor="cherryStain">
-                </label>
-                <span className="color-option-text">
-                  Cherry
-                </span>
-              </div>
-              <div className="color-option">
-                <input
-                  type="radio"
-                  id="ebonyStain"
-                  name="woodStain"
-                  value="Ebony Stain"
-                  checked={woodStain === "Ebony Stain"}
-                  onChange={this.handleChange} />
-                <label className="color-option-label bg-black" htmlFor="ebonyStain">
-                </label>
-                <span className="color-option-text">
-                  Ebony
-                </span>
-              </div>
-              <div className="color-option">
-                <input
-                  type="radio"
-                  id="clearCoat"
-                  name="woodStain"
-                  value="Clear Coat"
-                  checked={woodStain === "Clear Coat"}
-                  onChange={this.handleChange} />
-                <label className="color-option-label bg-clear" htmlFor="clearCoat">
-                </label>
-                <span className="color-option-text">
-                  Clear Coat
-                </span>
-              </div>
-            </div>
-          </div>
         </fieldset>
-        <div className="ta-center">
-          <Button className="mb4" onClick={next}>Continue</Button>
-          <span className="simple-link d-block" onClick={prev}>Go Back</span>
-        </div>
       </div>
     );
   }
 }
+
+const StainSelector = ({handleChange, woodStain}) => (
+    <div className="stain-options">
+      <p>Stain Color</p>
+      <div className="color-option">
+        <input
+          type="radio"
+          id="mahoganyStain"
+          name="woodStain"
+          value="Mahogany Stain"
+          checked={woodStain === "Mahogany Stain"}
+          onChange={this.handleChange} />
+        <label className="color-option-label bg-brown" htmlFor="mahoganyStain">
+        </label>
+        <span className="color-option-text">
+          Mahogany
+        </span>
+      </div>
+      <div className="color-option">
+        <input
+          type="radio"
+          id="cherryStain"
+          name="woodStain"
+          value="Cherry Stain"
+          checked={woodStain === "Cherry Stain"}
+          onChange={this.handleChange} />
+        <label className="color-option-label bg-cherry" htmlFor="cherryStain">
+        </label>
+        <span className="color-option-text">
+          Cherry
+        </span>
+      </div>
+      <div className="color-option">
+        <input
+          type="radio"
+          id="ebonyStain"
+          name="woodStain"
+          value="Ebony Stain"
+          checked={woodStain === "Ebony Stain"}
+          onChange={this.handleChange} />
+        <label className="color-option-label bg-black" htmlFor="ebonyStain">
+        </label>
+        <span className="color-option-text">
+          Ebony
+        </span>
+      </div>
+      <div className="color-option">
+        <input
+          type="radio"
+          id="clearCoat"
+          name="woodStain"
+          value="Clear Coat"
+          checked={woodStain === "Clear Coat"}
+          onChange={this.handleChange} />
+        <label className="color-option-label bg-clear" htmlFor="clearCoat">
+        </label>
+        <span className="color-option-text">
+          Clear Coat
+        </span>
+      </div>
+    </div>
+);

@@ -8,17 +8,21 @@ import {Footer} from 'Shared/Footer';
 export default class BuildYourOwn extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       step: 1,
       intervalId: 0,
     };
+
     this.nextStep = this.nextStep.bind(this);
     this.prevStep = this.prevStep.bind(this);
+
     this.scrollStep = this.scrollStep.bind(this);
     this.scrollToTop = this.scrollToTop.bind(this);
   }
 
-  nextStep(){
+  nextStep(e){
+    e.preventDefault();
     if(this.state.step < 6) {
       this.setState((prevState) => ({
         step: prevState.step + 1
@@ -27,7 +31,8 @@ export default class BuildYourOwn extends Component {
     }
   }
 
-  prevStep(){
+  prevStep(e){
+    e.preventDefault();
     if(this.state.step > 1) {
       this.setState((prevState) => ({
         step: prevState.step - 1
@@ -60,12 +65,12 @@ export default class BuildYourOwn extends Component {
               <div className="col-md-10">
                 <div className="byo-container">
                   {step !== 6 &&
-                    <Steps step={step} />  
+                    <StepHeader step={step} />
                   }
                   <BuildFormWrapper
+                    step={step}
                     next={this.nextStep}
                     prev={this.prevStep}
-                    step={step}
                   />
                 </div>
               </div>
@@ -79,7 +84,7 @@ export default class BuildYourOwn extends Component {
   }
 }
 
-const Steps = ({step}) => (
+const StepHeader = ({step}) => (
   <div className="byo-steps">
     <div className={`step ${step === 1 ? 'active' : ''}`}>Table</div>
     <div className={`step ${step === 2 ? 'active' : ''}`}>Pedestal</div>

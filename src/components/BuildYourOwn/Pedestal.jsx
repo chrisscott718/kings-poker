@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-import {Button} from 'Shared/Button';
 import {SectionHeader} from './FormElements';
 
 import pedClaw from 'Images/pedestal-claw.svg';
@@ -17,10 +16,9 @@ export default class Pedestal extends Component {
 
   handleChange(e){
     this.props.handleChange(e);
-    setTimeout(this.props.next, 400);
   }
   render(){
-    const { value, prev, next } = this.props;
+    const { value } = this.props;
     return(
       <div>
         <SectionHeader
@@ -39,7 +37,7 @@ export default class Pedestal extends Component {
               <label className="label-with-image" htmlFor="reed">
                 <div className="checkmark draw"></div>
                 <div className="label-content">
-                  <img src={pedReed} alt="Wood Simple Classic Style Pedestal"/>
+                  <img src={pedReed} alt="Wood Classic Style Pedestal"/>
                   <p className="label-title">Reed</p>
                   <p className="label-subtitle">Classic simple style, solid wood</p>
                 </div>
@@ -98,12 +96,6 @@ export default class Pedestal extends Component {
             </div>
           </div>
         </fieldset>
-        <div className="ta-center">
-          {value &&
-            <Button className="mb4" onClick={next}>Continue</Button>
-          }
-          <span className="simple-link d-block" onClick={prev}>Go Back</span>
-        </div>
       </div>
     );
   }

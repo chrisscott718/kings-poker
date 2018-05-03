@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
+import { Transition } from 'react-transition-group';
+
+import {Button} from 'Shared/Button';
 
 import {
   TableDetails,
   QuoteSubmissionForm,
 } from './FormElements';
-
 import TableShape from './TableShape';
 import Pedestal from './Pedestal';
 import Chiprack from './Chiprack';
@@ -50,39 +52,68 @@ class _BuildFormWrapper extends Component {
   }
 
   render() {
-    const { step } = this.props;
-
-    let activeForm = null;
-
-    switch (step) {
-      case 1:
-        activeForm = <TableShape {...this.props} value={this.state.tableShape} handleChange={this.handleChange} />
-        break;
-      case 2:
-        activeForm = <Pedestal {...this.props} value={this.state.pedestalStyle} handleChange={this.handleChange} />
-        break;
-      case 3:
-        activeForm = <Chiprack chipRack={this.state.chipRack} cupHolders={this.state.cupHolders} {...this.props} handleChange={this.handleChange} />
-        break;
-      case 4:
-        activeForm = <Wood woodType={this.state.woodType} woodStain={this.state.woodStain} {...this.props} handleChange={this.handleChange}/>
-        break;
-      case 5:
-        activeForm = <TableDetails {...this.props} state={this.state} handleChange={this.handleChange} />
-        break;
-      case 6:
-        activeForm = <QuoteSubmissionForm state={this.state} {...this.props} handleChange={this.handleChange} />
-        break;
-      default:
-        activeForm = <TableShape {...this.props} handleChange={this.handleChange} />
-    }
+    const { step, next, prev } = this.props;
 
     return (
       <form onSubmit={this.handleSubmit}>
-        {activeForm}
+        <FormTransition inProp={step === 1}>
+          <TableShape
+            value={this.state.tableShape}
+            handleChange={this.handleChange}
+          />
+        </FormTransition>
+        <FormTransition inProp={step === 2}>
+          <Pedestal
+            value={this.state.pedestalStyle}
+            handleChange={this.handleChange}
+          />
+        </FormTransition>
+        <FormTransition inProp={step === 3}>
+          <Chiprack
+            chipRack={this.state.chipRack}
+            cupHolders={this.state.cupHolders}
+            handleChange={this.handleChange}
+          />
+        </FormTransition>
+        <FormTransition inProp={step === 4}>
+          <Wood
+            woodType={this.state.woodType}
+            woodStain={this.state.woodStain}
+            handleChange={this.handleChange}
+          />
+        </FormTransition>
+        <FormTransition inProp={step === 5}>
+          <TableDetails
+            state={this.state}
+            handleChange={this.handleChange}
+          />
+        </FormTransition>
+        <FormTransition inProp={step === 6}>
+          <QuoteSubmissionForm
+            state={this.state}
+            prev={prev}
+            handleChange={this.handleChange}
+          />
+        </FormTransition>
+        {step !== 6 &&
+          <div className="ta-center">
+            <Button className="next-btn" onClick={next}>Next Step</Button>
+            <Button className="prev-btn" onClick={prev} disabled={step === 1}>Go Back</Button>
+          </div>
+        }
       </form>
     );
   }
 }
+
+const FormTransition = ({children, inProp}) => (
+  <Transition in={inProp} timeout={400} unmountOnExit>
+    {state => (
+      <div className={`form form-${state}`}>
+        {children}
+      </div>
+    )}
+  </Transition>
+);
 
 export const BuildFormWrapper = withRouter(_BuildFormWrapper);

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-import {Button} from 'Shared/Button';
 import {SectionHeader} from './FormElements';
 
 import chiprackSolid from 'Images/chiprack-solid.svg';
@@ -12,7 +11,7 @@ import cupOvs from 'Images/cupholder-oversized.svg';
 
 export default class Chiprack extends Component {
   render(){
-    const { handleChange, prev, next, chipRack, cupHolders } = this.props;
+    const { handleChange, chipRack, cupHolders } = this.props;
     return(
       <div>
         <SectionHeader
@@ -80,7 +79,7 @@ export default class Chiprack extends Component {
 
             <div className="form-row-h">
               <div className="form-row-title">
-                <h3 className="ta-right">Cupholders</h3>
+                <h3>Cupholders</h3>
               </div>
               <div className="form-row-content">
                 <input
@@ -136,10 +135,6 @@ export default class Chiprack extends Component {
             </div>
           </div>
         </fieldset>
-        <div className="ta-center">
-          <Button className="mb4" onClick={next}>Continue</Button>
-          <span className="simple-link d-block" onClick={prev}>Go Back</span>
-        </div>
       </div>
     );
   }

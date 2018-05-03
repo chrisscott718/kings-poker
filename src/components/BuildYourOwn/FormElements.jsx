@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 
-import {Button} from 'Shared/Button';
-
 import vinyl from 'Images/armrest-vinyl.png';
 import leather from 'Images/armrest-leather.png';
 
+import {Button} from 'Shared/Button';
 
 export const SectionHeader = ({title, subtitle}) => (
   <div className="byo-header ta-center">
@@ -15,7 +14,7 @@ export const SectionHeader = ({title, subtitle}) => (
 
 export class TableDetails extends Component {
   render(){
-    const { handleChange, prev, next, state } = this.props;
+    const { handleChange, state } = this.props;
     return(
       <div>
         <SectionHeader
@@ -203,10 +202,6 @@ export class TableDetails extends Component {
             </div>
           </div>
         </fieldset>
-        <div className="ta-center">
-          <Button className="mb4" onClick={next}>Continue</Button>
-          <span className="simple-link d-block" onClick={prev}>Go Back</span>
-        </div>
       </div>
     );
   }
@@ -214,7 +209,7 @@ export class TableDetails extends Component {
 
 export class QuoteSubmissionForm extends Component {
   render(){
-    const { handleChange, prev, state } = this.props;
+    const { handleChange, state, prev } = this.props;
     return(
       <div>
         <SectionHeader
@@ -254,10 +249,10 @@ export class QuoteSubmissionForm extends Component {
               onChange={handleChange}
               placeholder="What else should we know?">
             </textarea>
-          </div>
-          <div className="ta-center">
-            <Button className="mb4" type="submit">Send My Quote</Button>
-            <span className="simple-link d-block" onClick={prev}>Go Back</span>
+            <div className="ta-center">
+              <Button className="next-btn" style={{width: '100%', margin: '1rem 0',}} type="submit">Send My Quote</Button>
+              <Button className="prev-btn" onClick={prev}>Go Back</Button>
+            </div>
           </div>
         </fieldset>
       </div>
