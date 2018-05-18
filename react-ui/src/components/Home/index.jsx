@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom';
 
 import './style.scss';
 
-import headerImage from 'Images/home-table.png';
+import headerImage from 'Images/header-img.png';
 
 import {Button} from 'Shared/Button';
 import {Footer} from 'Shared/Footer';

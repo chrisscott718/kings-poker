@@ -1,6 +1,7 @@
 .wrapper {
   min-height: 100vh;
   position: relative;
+  overflow: hidden;
   // background: linear-gradient(rgba(248,248,248,1) 0%, rgba(255,255,255,1) 100%);
 }
 .header-content {
@@ -10,11 +11,10 @@
 }
 .header-img {
   position: absolute;
-  max-width: 300px;
+  max-width: 450px;
   bottom: 0;
-  right: 0;
+  right: -100px;
   z-index: 0;
-  max-height: 400px;
 }
 .seperator {
   margin-bottom: 1rem;
@@ -29,9 +29,15 @@
   padding: 0.5rem;
 }
 
-@media (min-width: 992px) {
+@media(max-width: 576px) {
   .header-img {
     max-width: 400px;
+    right: -150px;
+  }
+}
+@media (min-width: 992px) {
+  .header-img {
+    max-width: 550px;
   }
   .header-content {
     align-items: center;

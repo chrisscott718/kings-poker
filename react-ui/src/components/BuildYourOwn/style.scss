@@ -261,9 +261,40 @@ input[type="radio"]:checked + .sm-img-checkbox {
   }
 }
 
-.quote-form {
-  max-width: 400px;
-  margin: 0 auto;
+.inventory-wrapper {
+  padding: 2.5rem 0;
+}
+.p-header {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.inventory-list {
+  .item {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-radius: 3px;
+    padding: 0.75rem 1rem;
+    &:nth-child(odd) {
+      background: var(--gray0);
+    }
+  }
+  .title {
+    text-transform: uppercase;
+    color: var(--black);
+    opacity: 0.6;
+    flex: 0 0 40%;
+    font-size: 0.75rem;
+  }
+  .text {
+    flex: 1 1 auto;
+    font-weight: 500;
+  }
 }
 
 // WOOD STYLES

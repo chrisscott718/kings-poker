@@ -6,7 +6,6 @@ import chiprackSolid from 'Images/chiprack-solid.svg';
 import chiprackGrooved from 'Images/chiprack-grooved.svg';
 import chiprackNone from 'Images/chiprack-none.svg';
 
-import cupStd from 'Images/cupholder-standard.svg';
 import cupOvs from 'Images/cupholder-oversized.svg';
 
 export default class Chiprack extends Component {
@@ -82,22 +81,6 @@ export default class Chiprack extends Component {
                 <h3>Cupholders</h3>
               </div>
               <div className="form-row-content">
-                <input
-                  type="radio"
-                  id="cupholderStandard"
-                  name="cupHolders"
-                  value="Standard Cupholders"
-                  checked={cupHolders === "Standard Cupholders"}
-                  onChange={handleChange} />
-                <label className="sm-img-checkbox" htmlFor="cupholderStandard">
-                  <div className="sm-img-wrapper">
-                    <img src={cupStd} alt="Standard premium metal cupholders. Most bottles, cups and cans will fit." />
-                  </div>
-                  <div className="sm-checkbox-content">
-                    <p className="t-bold mb2">Premium Metal Cupholders</p>
-                    <p className="t-sm t-muted">Full metal cupholders. Fits most bottles, cups and cans.</p>
-                  </div>
-                </label>
 
                 <input
                   type="radio"

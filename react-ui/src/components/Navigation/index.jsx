@@ -13,7 +13,7 @@ export default class Navigation extends Component {
           <div className="nav-wrapper">
             <div className="nav-brand">
               <NavLink to="/">
-                <img width="250" src={logo} alt="Kings Poker Tables | Luxury Custom Poker Tables"/>
+                <img width="280" src={logo} alt="Kings Poker Tables | Luxury Custom Poker Tables"/>
               </NavLink>
             </div>
             <div className="nav-content">
@@ -41,8 +41,6 @@ export default class Navigation extends Component {
               </div>
             </div>
           </div>
-
-
         </div>
       </nav>
     );

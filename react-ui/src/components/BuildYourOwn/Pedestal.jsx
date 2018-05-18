@@ -46,16 +46,16 @@ export default class Pedestal extends Component {
             <div className="tile">
               <input
                 type="radio"
-                id="executive"
+                id="lux"
                 name="pedestalStyle"
-                value="Executive"
-                checked={value === "Executive"}
+                value="Lux"
+                checked={value === "Lux"}
                 onChange={this.handleChange} />
-              <label className="label-with-image" htmlFor="executive">
+              <label className="label-with-image" htmlFor="lux">
                 <div className="checkmark draw"></div>
                 <div className="label-content">
-                  <img src={pedExecutive} alt="Wood Executive Style Pedestal"/>
-                  <p className="label-title">Executive</p>
+                  <img src={pedExecutive} alt="Wood Lux Style Pedestal"/>
+                  <p className="label-title">Lux</p>
                   <p className="label-subtitle">Modern, solid wood</p>
                 </div>
               </label>

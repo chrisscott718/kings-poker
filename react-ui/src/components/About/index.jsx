@@ -3,8 +3,8 @@ import {NavLink} from 'react-router-dom';
 
 import './style.scss';
 
-import img1 from 'Images/table-round.png';
-import img2 from 'Images/table-long.png';
+import img1 from 'Images/tables-1.jpg';
+import img2 from 'Images/tables-2.jpg';
 
 import {Button} from 'Shared/Button';
 import {Footer} from 'Shared/Footer';
@@ -26,10 +26,10 @@ export default class About extends Component {
             </div>
           </div>
           <div className="row f-a-center">
-            <div className="col-md-7 about-img">
+            <div className="col-md-6 about-img">
               <img className="i-fluid br-3" src={img2} alt="Kings Poker Tables | Oval Table" />
             </div>
-            <div className="col-md-5 about-content">
+            <div className="col-md-6 about-content">
               <h3 className="mb4">The Highest Quality Tables Around</h3>
               <p className="lh-2 ta-justify mb4 t-muted">
                 Kings Poker manufactures uniquely fabricated
@@ -55,8 +55,8 @@ export default class About extends Component {
           </div>
           <div className="row ta-center about-footer">
             <div className="col"></div>
-            <div className="col-md-6">
-              <h3 className="mb4">Let us create your next gaming table</h3>
+            <div className="col-md-8">
+              <h3 className="mb4">Let us create your next gaming table!</h3>
               <NavLink to="/buildyourown">
                 <Button className="mb4">Build a Table</Button>
               </NavLink>

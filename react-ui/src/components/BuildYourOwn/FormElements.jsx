@@ -4,6 +4,7 @@ import vinyl from 'Images/armrest-vinyl.png';
 import leather from 'Images/armrest-leather.png';
 
 import {Button} from 'Shared/Button';
+import {inventoryMap} from 'Shared/Constants';
 
 export const SectionHeader = ({title, subtitle}) => (
   <div className="byo-header ta-center">
@@ -208,6 +209,33 @@ export class TableDetails extends Component {
 }
 
 export class QuoteSubmissionForm extends Component {
+  constructor(props) {
+    super(props);
+
+    this.renderInventory = this.renderInventory.bind(this);
+  }
+
+  renderInventory() {
+    const {name, phone, email, message, ...rest} = this.props.state;
+    let items = [];
+    for (const prop in rest) {
+      const text = rest[prop];
+      if(text) {
+        items.push(
+          <div className='item' key={prop}>
+            <p className="title">{inventoryMap[prop].name}</p>
+            <p className="text">{prop !== "includeDiningTop" ? text : 'Yes'}</p>
+          </div>
+        );
+      }
+    }
+    return (
+      <div className="inventory-list">
+        {items}
+      </div>
+    );
+  }
+
   render(){
     const { handleChange, state, prev } = this.props;
     return(
@@ -215,46 +243,56 @@ export class QuoteSubmissionForm extends Component {
         <SectionHeader
           title="Where do we send your quote?"
           subtitle="Please fill out the form below and we'll send you the details of your quote" />
-        <fieldset>
-          <div className="quote-form">
-            <input
-              type="text"
-              required
-              autoFocus
-              name="name"
-              value={state.name}
-              onChange={handleChange}
-              className="form-control"
-              placeholder="Your name*" />
-            <input
-              type="email"
-              required
-              className="form-control"
-              name="email"
-              value={state.email}
-              onChange={handleChange}
-              placeholder="Email address*" />
-            <input
-              type="text"
-              className="form-control"
-              name="phone"
-              value={state.phone}
-              onChange={handleChange}
-              placeholder="Phone number" />
-            <textarea
-              className="form-control"
-              rows="3"
-              name="message"
-              value={state.message}
-              onChange={handleChange}
-              placeholder="What else should we know?">
-            </textarea>
-            <div className="ta-center">
-              <Button className="next-btn" style={{width: '100%', margin: '1rem 0',}} type="submit">Send My Quote</Button>
-              <Button className="prev-btn" onClick={prev}>Go Back</Button>
+        <div className="row">
+          <div className="col-sm-5">
+            <fieldset>
+              <div className="quote-form">
+                <input
+                  type="text"
+                  required
+                  autoFocus
+                  name="name"
+                  value={state.name}
+                  onChange={handleChange}
+                  className="form-control"
+                  placeholder="Your name*" />
+                <input
+                  type="email"
+                  required
+                  className="form-control"
+                  name="email"
+                  value={state.email}
+                  onChange={handleChange}
+                  placeholder="Email address*" />
+                <input
+                  type="text"
+                  className="form-control"
+                  name="phone"
+                  value={state.phone}
+                  onChange={handleChange}
+                  placeholder="Phone number" />
+                <textarea
+                  className="form-control"
+                  rows="3"
+                  name="message"
+                  value={state.message}
+                  onChange={handleChange}
+                  placeholder="What else should we know?">
+                </textarea>
+                <div className="ta-center">
+                  <Button className="next-btn" style={{width: '100%', margin: '1rem 0',}} type="submit">Send My Quote</Button>
+                  <Button className="prev-btn" onClick={prev}>Go Back</Button>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div className="col-sm-7">
+            <div className="inventory-wrapper">
+              <p className="p-header">Your customized table</p>
+              {this.renderInventory()}
             </div>
           </div>
-        </fieldset>
+        </div>
       </div>
     );
   }

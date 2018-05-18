@@ -23,7 +23,6 @@ class _BuildFormWrapper extends Component {
       chipRack: '',
       cupHolders: '',
       woodType: '',
-      woodStain: '',
       fabricColor: '',
       metalAccent: '',
       armRest: '',

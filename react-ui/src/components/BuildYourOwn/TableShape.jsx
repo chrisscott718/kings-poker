@@ -83,14 +83,14 @@ export default class TableShape extends Component {
                 type="radio"
                 id="tableEllipsis"
                 name="tableShape"
-                value="Ellipsis"
-                checked={value === "Ellipsis"}
+                value="Ellipse"
+                checked={value === "Ellipse"}
                 onChange={this.handleChange} />
               <label className="label-with-image" htmlFor="tableEllipsis">
                 <div className="checkmark draw"></div>
                 <div className="label-content">
-                  <img src={ellipsisTable} alt="Ellipsis Table, Seats 8-10 Players"/>
-                  <p className="label-title">Ellipsis</p>
+                  <img src={ellipsisTable} alt="Ellipse Table, Seats 8-10 Players"/>
+                  <p className="label-title">Ellipse</p>
                   <p className="label-subtitle">Seats 10-14 players</p>
                 </div>
               </label>
