@@ -499,6 +499,16 @@ input[type="checkbox"]:checked + .checkbox {
   padding: 0.8rem 1.6rem;
 }
 // Media Queries
+@media (max-width: 768px) {
+  .wood-type-check {
+    flex: 1 1 50%;
+    margin: 0;
+    padding: 1rem;
+    .wood-img {
+      height: auto;
+    }
+  }
+}
 
 @media (min-width: 768px) {
   .byo-steps {
