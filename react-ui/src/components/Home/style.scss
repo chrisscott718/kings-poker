@@ -50,3 +50,31 @@
     margin: 1rem auto;
   }
 }
+
+@media (min-width: 768px) {
+  .logo-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px 30px;
+  }
+  .home-footer {
+    position: relative;
+  }
+  .logo-mobile {
+    margin-bottom: 2.5rem;
+  }
+  .header-content {
+    h1 {
+      font-size: 1.5rem;
+    }
+    .lead {
+      font-size: 0.9rem;
+    }
+  }
+}
