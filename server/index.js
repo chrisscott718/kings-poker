@@ -51,7 +51,7 @@ if (cluster.isMaster) {
     const data = req.body;
 
     const msg = {
-      to: 'chris.scott718@gmail.com',
+      to: 'jason@kingspokertables.com',
       from: data.email,
       subject: data.type === "contactRequest" ? 'Information Request | Kings Poker Tables' : 'Custom Table Quote Request | Kings Poker Tables',
       html: data.type === "contactRequest" ? templates.contactRequest(data) : templates.buildRequestTemplate(data)
