@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
 import { Transition } from 'react-transition-group';
 
+import {sendMail} from '../../api';
+
 import {Button} from 'Shared/Button';
 
 import {
@@ -47,7 +49,20 @@ class _BuildFormWrapper extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.history.push('/byosuccess');
+
+    const data = {
+      ...this.state,
+      type: 'buildRequest',
+    };
+
+    sendMail(data)
+    .then( res => {
+      if(res.status === 200)
+        this.props.history.push('/byosuccess');
+      else
+        this.props.history.push('/builderror');
+    })
+    .catch( err => this.props.history.push('/builderror'));
   }
 
   render() {
