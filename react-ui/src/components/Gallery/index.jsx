@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "./style.scss";
+import { NavLink } from "react-router-dom";
 import PhotoGallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import photos from "./photos";
+import { Button } from "Shared/Button";
 
 export default class Gallery extends Component {
   state = {
@@ -37,6 +39,15 @@ export default class Gallery extends Component {
             These are only a few of our many tables. If you don't see something
             you are looking for contact us and we can make it happen.
           </p>
+          <span className='mb4 d-block' />
+          <h4 className='mb4'>Let us create your next gaming table!</h4>
+          <NavLink to='/buildyourown'>
+            <Button className='mb4'>Build a Table</Button>
+          </NavLink>
+          <p className='t-sm t-muted'>or call us today</p>
+          <a className='c-gold t-bold td-none t-md' href='tel:1-800-897-1189'>
+            800-897-1189
+          </a>
         </section>
         <section>
           <PhotoGallery photos={photos} onClick={this.openLightbox} />
