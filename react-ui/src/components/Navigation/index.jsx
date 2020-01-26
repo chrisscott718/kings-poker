@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import {NavLink} from 'react-router-dom';
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 
-import './style.scss';
+import "./style.scss";
 
-import logo from 'Images/logo-h.png';
+import logo from "Images/logo-h.png";
 
 export default class Navigation extends Component {
   constructor(props) {
@@ -17,57 +17,65 @@ export default class Navigation extends Component {
   }
 
   toggleNavigation() {
-    this.setState((prevState) => {
+    this.setState(prevState => {
       return {
-        navIsOpen: !prevState.navIsOpen
+        navIsOpen: !prevState.navIsOpen,
       };
     });
   }
 
   render() {
     return (
-      <nav>
-        <div className="container">
-          <div className="nav-wrapper">
-            <div className="nav-brand">
-              <NavLink to="/">
-                <img width="280" src={logo} className="logo-large" alt="Kings Poker Tables | Luxury Custom Poker Tables"/>
+      <nav className='kpt-nav-wrapper'>
+        <div className='container'>
+          <div className='nav-wrapper'>
+            <div className='nav-brand'>
+              <NavLink to='/'>
+                <img
+                  width='280'
+                  src={logo}
+                  className='logo-large'
+                  alt='Kings Poker Tables | Luxury Custom Poker Tables'
+                />
               </NavLink>
             </div>
-            <div className="nav-control">
-              <div className={`${this.state.navIsOpen ? 'open' : '' } menu hamburger`} onClick={this.toggleNavigation}>
+            <div className='nav-control'>
+              <div
+                className={`${
+                  this.state.navIsOpen ? "open" : ""
+                } menu hamburger`}
+                onClick={this.toggleNavigation}
+              >
                 <span></span>
                 <span></span>
                 <span></span>
               </div>
             </div>
-            <div className="nav-content">
-              <div className={`${this.state.navIsOpen ? 'open' : '' } nav`}>
-                <ul className="nav-links">
-                  <li className="nav-link" onClick={this.toggleNavigation}>
-                    <NavLink to="/">
-                      Home
-                    </NavLink>
+            <div className='nav-content'>
+              <div className={`${this.state.navIsOpen ? "open" : ""} nav`}>
+                <ul className='nav-links'>
+                  <li className='nav-link' onClick={this.toggleNavigation}>
+                    <NavLink to='/'>Home</NavLink>
                   </li>
-                  <li className="nav-link" onClick={this.toggleNavigation}>
-                    <NavLink to="/buildyourown">
-                      Build A Table
-                    </NavLink>
+                  <li className='nav-link' onClick={this.toggleNavigation}>
+                    <NavLink to='/buildyourown'>Build A Table</NavLink>
                   </li>
-                  <li className="nav-link" onClick={this.toggleNavigation}>
-                    <NavLink to="/about">
-                      About
-                    </NavLink>
+                  <li className='nav-link' onClick={this.toggleNavigation}>
+                    <NavLink to='/gallery'>Gallery</NavLink>
                   </li>
-                  <li className="nav-link" onClick={this.toggleNavigation}>
-                    <NavLink to="/contact">
-                      Contact
-                    </NavLink>
+                  <li className='nav-link' onClick={this.toggleNavigation}>
+                    <NavLink to='/contact'>Contact</NavLink>
                   </li>
                 </ul>
               </div>
-              <div className="nav-number">
-                <a className="c-gold t-bold td-none t-md" href="tel:1-800-897-1189">800-897-1189</a>
+              <div className='nav-number'>
+                <span>Call Us: </span>
+                <a
+                  className='c-gold t-bold td-none t-md'
+                  href='tel:1-800-897-1189'
+                >
+                  800-897-1189
+                </a>
               </div>
             </div>
           </div>
