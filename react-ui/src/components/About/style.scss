@@ -9,7 +9,6 @@
 }
 .about-content {
   order: 0;
-  margin: 2rem 0;
 }
 .about-img {
   order: 1;
@@ -23,12 +22,16 @@
   margin-bottom: 2rem;
   border-radius: 3px;
 }
-
+.about-wrapper {
+  padding-top: 5rem;
+  .row {
+    padding: 2.5rem 0;
+  }
+}
 
 @media (min-width: 992px) {
   .about-content {
     order: 1;
-    margin: 4rem 0;
     padding: 0 4rem;
     h3 {
       font-size: 1.85rem;
@@ -40,6 +43,13 @@
   }
   .about-img {
     order: 0;
+    h3 {
+      font-size: 1.85rem;
+      line-height: 44px;
+    }
+    p {
+      font-size: 0.875rem;
+    }
   }
   .about-header {
     display: flex;

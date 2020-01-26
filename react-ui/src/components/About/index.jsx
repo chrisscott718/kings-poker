@@ -5,6 +5,7 @@ import "./style.scss";
 
 import img1 from "Images/tables-1.jpg";
 import img2 from "Images/tables-2.jpg";
+import img3 from "Images/tables-3.jpg";
 
 import { Button } from "Shared/Button";
 import { Footer } from "Shared/Footer";
@@ -12,7 +13,7 @@ import { Footer } from "Shared/Footer";
 export default class About extends Component {
   render() {
     return (
-      <div className='page-wrapper'>
+      <div className='page-wrapper about-wrapper'>
         <div className='container'>
           <div className='row'>
             <div className='col-lg-7'>
@@ -30,7 +31,7 @@ export default class About extends Component {
               />
             </div>
           </div>
-          <div className='row f-a-center'>
+          <div className='row'>
             <div className='col-md-6 about-img'>
               <img
                 className='i-fluid br-3'
@@ -55,6 +56,29 @@ export default class About extends Component {
                 come with an optional dining top, which fits securely over the
                 table.
               </p>
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col-md-6 about-img'>
+              <h3 className='mb4'>Customized for You</h3>
+              <p className='lh-2 ta-justify mb4 t-muted'>
+                Kings Poker can also customize and create unique pedestals and
+                chairs to match your gaming table theme. We use specialized
+                woods, brass, and stainless steal to offer a large variety of
+                options.
+              </p>
+              <p className='lh-2 ta-justify mb4 t-muted'>
+                No matter what kind of table or theme you need, Kings Poker can
+                create the perfect solution for you. If you don't see something
+                here that you like contact us and we'll make it happen.
+              </p>
+            </div>
+            <div className='col-md-6 about-content'>
+              <img
+                className='i-fluid br-3'
+                src={img3}
+                alt='Kings Poker Tables | Custom Chairs and Pedistals'
+              />
             </div>
           </div>
           <div className='row ta-center about-footer'>
