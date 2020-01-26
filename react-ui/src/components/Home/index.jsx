@@ -6,7 +6,6 @@ import "./style.scss";
 import logo from "Images/logo-center.png";
 
 import { Button } from "Shared/Button";
-import { Footer } from "Shared/Footer";
 import About from "../About";
 
 export default class Home extends Component {
