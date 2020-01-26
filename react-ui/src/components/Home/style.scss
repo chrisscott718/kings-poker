@@ -2,15 +2,15 @@
   min-height: 95vh;
   position: relative;
   overflow: hidden;
-  background-image: url(../../images/tables-1.jpg);
-  background-position: bottom center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-color: #464646;
+  // background-image: url(../../images/tables-1.jpg);
+  // background-position: bottom center;
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+  // background-size: cover;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-color: #464646;
   &:after {
     content: "";
     position: absolute;
@@ -22,6 +22,13 @@
       rgba(0, 0, 0, 0.55) 0%,
       rgba(0, 0, 0, 0.25) 100%
     );
+  }
+  .background-img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    bottom: 0;
   }
 }
 .header-content {
@@ -84,6 +91,12 @@
 @media (min-width: 768px) {
   .logo-mobile {
     display: none;
+  }
+  .wrapper {
+    .background-img {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 

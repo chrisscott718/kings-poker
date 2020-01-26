@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import "./style.scss";
 
-import logo from "Images/logo-center.png";
+import background from "Images/tables-1.jpg";
 
 import { Button } from "Shared/Button";
 import About from "../About";
@@ -14,12 +14,6 @@ export default class Home extends Component {
       <div>
         <main className='wrapper d-flex f-j-center f-a-center'>
           <section className='header-content'>
-            <img
-              width='125'
-              src={logo}
-              className='logo-mobile'
-              alt='Kings Poker Tables | Luxury Custom Poker Tables'
-            />
             <h1 className='mb4 mt0'>Redefine your Poker Experience</h1>
             <p className='lead'>
               Custom Luxury Poker Tables Built to Perfection
@@ -40,6 +34,11 @@ export default class Home extends Component {
               </div>
             </div>
           </section>
+          <img
+            className='background-img'
+            src={background}
+            alt='Poker Table Background'
+          />
         </main>
         <section className='about-section'>
           <About />
